@@ -102,15 +102,16 @@ classDiagram
         +main(String[] args) void
     }
 
-    Mission "1" *-- "1" Curse : содержит
-    Mission "1" *-- "0..*" Sorcerer : содержит
-    Mission "1" *-- "0..*" Technique : содержит
+    Mission "1" *-- "1" Curse
+    Mission "1" *-- "0..*" Sorcerer
+    Mission "1" *-- "0..*" Technique
 
-    Parser_of_mission <|-- XML_parser : наследует
-    Parser_of_mission <|-- JSON_parser : наследует
-    Parser_of_mission <|-- TXT_parser : наследует
+    Parser_of_mission <|-- XML_parser
+    Parser_of_mission <|-- JSON_parser
+    Parser_of_mission <|-- TXT_parser
 
-    Files_processing --> Parser_of_mission : использует
-    Files_processing --> Basic_window : взаимодействует
-    Basic_window --> Files_processing : содержит
-    Main --> Basic_window : создает
+    Files_processing --> Parser_of_mission
+    Files_processing --> Basic_window
+    Basic_window --> Files_processing
+
+    Main ..> Basic_window
