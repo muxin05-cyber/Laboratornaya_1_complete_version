@@ -1,10 +1,18 @@
 package Missions_data;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Technique {
+    @XmlElement
     private String name;
+    @XmlElement
     private String type;
+    @XmlElement
     private String owner;
+    @XmlElement
     private int damage;
 
     public void setName(String name){
