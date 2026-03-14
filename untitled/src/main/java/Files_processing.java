@@ -79,22 +79,19 @@ public class Files_processing {
 
     private boolean checking_xml(String filepath) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filepath))) {
-            String first_line = reader.readLine();
-            if (first_line == null) {
-                return false;
-            }
             String line;
             while ((line = reader.readLine()) != null) {
                 line = line.trim();
-                if (line.isEmpty()) continue;
-                if (line.startsWith("<mission") || line.equals("<mission>")) {
+                if (line.isEmpty()){
+                    continue;
+                }
+                if (line.equals("<mission>")) {
                     return true;
                 }
                 return false;
             }
         } catch (IOException e) {
             return false;
-
         }
         return false;
     }
@@ -133,7 +130,6 @@ public class Files_processing {
             if (!firstTag.equals("missionId")) {
                 return false;
             }
-
             return true;
 
         } catch (IOException e) {

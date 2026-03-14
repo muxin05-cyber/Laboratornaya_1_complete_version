@@ -82,7 +82,6 @@ public class Basic_window extends JFrame {
                 if (mission != null) {
                     result_area.setText(mission.getView());
                 }
-
             }
         });
 
